@@ -1,0 +1,23 @@
+# Environment variables
+.env
+
+# Compiled binaries
+backend/tmp/
+backend/bin/
+
+# Dependencies
+node_modules/
+
+# IDE files
+.idea/
+.vscode/
+
+# Database
+postgres-data/
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+.DS_Store

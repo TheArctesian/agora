@@ -1,0 +1,43 @@
+type User {
+  id: ID!
+  name: String!
+  avatar: String
+  connections: [Connection!]!
+}
+
+type Connection {
+  id: ID!
+  source: User!
+  target: User!
+  strength: Float
+  type: String
+}
+
+type Query {
+  users: [User!]!
+  user(id: ID!): User
+  networkMap: [Connection!]!
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User!
+  createConnection(input: CreateConnectionInput!): Connection!
+  updateConnection(id: ID!, input: UpdateConnectionInput!): Connection!
+}
+
+input CreateUserInput {
+  name: String!
+  avatar: String
+}
+
+input CreateConnectionInput {
+  sourceId: ID!
+  targetId: ID!
+  strength: Float
+  type: String
+}
+
+input UpdateConnectionInput {
+  strength: Float
+  type: String
+}
